@@ -35,6 +35,6 @@ export default {
       max: 300,
       step: 10
     },
-    lineheight: true
+    lineheight: true,
   }
 }
