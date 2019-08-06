@@ -6,12 +6,13 @@ import RobotoCondReg from './config/fonts/roboto-cond-reg'
 import RobotoLight from './config/fonts/roboto-light'
 import RobotoMed from './config/fonts/roboto-medium'
 import RobotoBlack from './config/fonts/roboto-black'
+import RobotoCondBoldItalic from './config/fonts/roboto-cond-bold-italic'
 
 // import decoration_freeStory from './config/decorations/free-story'
 
 import themes from './config/themes'
 import layers from './config/layers'
-// import layouts from './config/layouts'
+import layouts from './config/layouts'
 import templates from './config/templates'
 
 window.activeCardWidth = 1080
@@ -24,6 +25,7 @@ var configuration = {
   },
   fonts: {
     RobotoCond,
+    RobotoCondBoldItalic,
     RobotoCondReg,
     RobotoLight,
     RobotoMed,
@@ -34,31 +36,6 @@ var configuration = {
 
 
 
-// Override the default values of each layer's properties per template
-// const themes = cardThemes
-
-// // Artboard sizes
-const layouts = {
-  '16 x 9': {
-    card: {
-      width: 1920,
-      height: 1080,
-    },
-  },
-  '4 x 3': {
-    card: {
-      width: 1920,
-      height: 1440,
-    }
-  },
-  square: {
-    card: {
-      width: 1920,
-      height: 1920,
-    }
-  },
-};
-
 // window.configuration = configuration
 // window.templates = templates
 // window.themes = themes
@@ -68,6 +45,6 @@ const layouts = {
 export default {
   configuration,
   templates, // Set which layers are visible in different templates
-  themes,
+  // themes,
   layouts,
 }
