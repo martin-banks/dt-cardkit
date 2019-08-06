@@ -23,7 +23,43 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <!-- <div id="root"></div> -->
+    <div id="ui"></div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.min.js"></script>
+
+    <script type="text/javascript" src="./cardkit.js"></script>
+    <script type="text/javascript" src="./dom.js"></script>
+
+    <div id="ui"></div>
+
+    <script type="text/javascript">
+
+    setTimeout(function () {
+      // Initialise CardKit
+      var cardkit = new CardKit(window.config.configuration, {
+        themes: window.config.themes,
+        layouts: window.config.layouts,
+        templates: window.config.templates,
+      });
+
+      // Initialise Renderer
+      var renderer = new CardKitDOM(cardkit);
+
+      // To render the card only (with optional theme / layout overrides)
+      // renderer.renderCard('ui', {
+      //   theme: 'Alt',
+      //   layout: 'Square'
+      // });
+
+      // OR To render the editing UI
+      renderer.renderUI('ui');
+
+    }, 500)
+    </script>
+
+    <!-- <script type="text/javascript" src="./dom.js"></script> -->
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
