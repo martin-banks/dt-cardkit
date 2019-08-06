@@ -3,7 +3,7 @@ import colors from '../colors'
 export default {
   type: 'text',
   name: 'Quote - credit',
-  x: 540,
+  x: 70,
   // y: 90,
   y: {
     attach: 'quoteDisplay',
@@ -13,9 +13,9 @@ export default {
   get lineHeight () {
     return this.fontSize * 1;
   },
-  textAnchor: 'middle',
+  textAnchor: 'start',
   fontFamily: 'RobotoCond',
-  fill: '#ffaa00',
+  fill: '#ffcc22',
   fontWeight: 'bold',
   text: 'QUOTE CREDIT',
 

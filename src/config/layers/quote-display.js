@@ -3,20 +3,20 @@ import colors from '../colors'
 export default {
   type: 'text',
   name: 'Quote - display',
-  x: 540,
+  x: 70,
   // y: 170,
   y: {
-    attach: 'quoteMark',
-    offset: 120,
+    attach: 'quoteMarkGold',
+    offset: 180,
   },
   fontSize: 150,
-  textAnchor: 'middle',
+  textAnchor: 'start',
   get lineHeight () {
     return this.fontSize * 1;
   },
   useAsFilename: true,
-  text: '"Display\nquote here"',
-  fontFamily: 'RobotoCond',
+  text: 'Display\nquote here',
+  fontFamily: 'RobotoCondBoldItalic',
   fill: '#fff',
   fontWeight: 'bold',
   draggable: true,
