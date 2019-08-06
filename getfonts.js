@@ -13,7 +13,8 @@ const urls = {
   // roboto300: `https://fonts.googleapis.com/css?family=Roboto:300`,
   // roboto400: `https://fonts.googleapis.com/css?family=Roboto:400`,
   // robotoCond400: `https://fonts.googleapis.com/css?family=Roboto+Condensed:400`,
-  robotoCond700i: `https://fonts.googleapis.com/css?family=Roboto+Condensed:700i&display=swap`
+  // robotoCond700i: `https://fonts.googleapis.com/css?family=Roboto+Condensed:700i&display=swap`,
+  robotoCondBold: `https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap`,
 }
 
 for (const font in urls) {
