@@ -12,8 +12,8 @@ import image from './image'
 
 import gradientLeft from './gradient-left'
 
-// import quoteMark from './quotemark'
-import quoteMarkGold from './quotemark-gold'
+import quoteMark from './quotemark'
+// import quoteMarkGold from './quotemark-gold'
 import quoteDisplay from './quote-display'
 import quoteCredit from './quote-credit'
 
@@ -24,8 +24,8 @@ export default {
   // imageMaskDrag,
   // imageMask,
   gradientLeft,
-  // quoteMark,
-  quoteMarkGold,
+  quoteMark,
+  // quoteMarkGold,
   // end,
   // endBottom,
   // kickerBottom,

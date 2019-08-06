@@ -6,17 +6,17 @@ export default {
   x: 70,
   // y: 170,
   y: {
-    attach: 'quoteMarkGold',
+    attach: 'quoteMark',
     offset: 180,
   },
   fontSize: 150,
   textAnchor: 'start',
   get lineHeight () {
-    return this.fontSize * 1;
+    return this.fontSize * 1.03;
   },
   useAsFilename: true,
   text: 'Display\nquote here',
-  fontFamily: 'RobotoCondBoldItalic',
+  fontFamily: 'RobotoCond',
   fill: '#fff',
   fontWeight: 'bold',
   draggable: true,
