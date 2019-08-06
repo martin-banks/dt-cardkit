@@ -12,7 +12,7 @@ export default {
   fontSize: 150,
   textAnchor: 'start',
   get lineHeight () {
-    return this.fontSize * 1.03;
+    return this.fontSize * 1.03
   },
   useAsFilename: true,
   text: 'Display\nquote here',
