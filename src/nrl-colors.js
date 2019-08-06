@@ -1,0 +1,18 @@
+export default {
+  broncos: '#6A003A',
+  bulldogs: '#0066B3',
+  cowboys: '#001B49',
+  dragons: '#EF3829',
+  eels: '#FFDA00',
+  knights: '#0D499C',
+  panthers: '#231F20',
+  rabbitohs: '#00A861',
+  raiders: '#C3D941',
+  roosters: '#00305E',
+  seaeagles: '#6a003a',
+  sharks: '#008ABF',
+  storm: '#732b90',
+  tigers: '#f68b1f',
+  titans: '#00aae7',
+  warriors: '#231F20',
+}
