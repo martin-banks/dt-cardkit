@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import CardKit from './cardkit'
-// import CardKitDOM from './dom-test'
-
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -23,3 +20,33 @@ serviceWorker.unregister();
 window.config = config
 
 window.layouts = config.layouts
+
+function startCardKit () {
+  console.log('stating...')
+  // Initialise CardKit
+  var cardkit = new window.CardKit(window.config.configuration, {
+    themes: window.config.themes,
+    layouts: window.config.layouts,
+    templates: window.config.templates,
+  });
+  
+  // Initialise Renderer
+  var renderer = new window.CardKitDOM(cardkit);
+
+  // OR To render the editing UI
+  renderer.renderUI('ui');
+}
+
+function checkForCardkit () {
+  console.log('checking...')
+  if (window.CardKit && window.CardKitDOM) {
+    startCardKit()
+  } else {
+    setTimeout(() => {
+      checkForCardkit()
+    }, 200)
+  }
+}
+
+checkForCardkit()
+
