@@ -3,11 +3,11 @@ import Styled from 'styled-components'
 
 import templates from '../config/templates'
 
-function Cardkit () {
-  return <div>
-    <h1>This will be the cardkit page</h1>
-  </div>
-}
+// function Cardkit () {
+//   return <div>
+//     <h1>This will be the cardkit page</h1>
+//   </div>
+// }
 
 class TemplateGrid extends Component {
   constructor (props) {
@@ -19,18 +19,23 @@ class TemplateGrid extends Component {
       <Header>
         <h1>Templates</h1>
       </Header>
-  
-      {
-        Object.keys(templates).map(k => <>
-          <Template onClick={ this.props.setCardkit.bind(null, templates[k]) }>
-            <h3>{ templates[k].info.title }</h3>
-          </Template>
-        </>
-        )
-      }
+      <Grid>
+        {
+          Object.keys(templates).map((k, i) => (
+            <Template
+              onClick={ this.props.setCardkit.bind(null, templates[k]) }
+              key={ `template-${i}` }
+            >
+              <Preview
+                src={ templates[k].info.preview }
+                alt={ `${templates[k].title} preview` }
+              />
+              <h3>{ templates[k].info.title }</h3>
+            </Template>
+          ))
+        }
+      </Grid>
 
-  
-      <pre>{ JSON.stringify(templates, 'utf8', 2) }</pre>
     </Layout>
     )
   }
@@ -54,13 +59,23 @@ const Grid = Styled.section`
 `
 
 const Template = Styled.div`
+  position: relative;
   padding: 1rem;
   border: solid 1px #ccc;
   cursor: pointer;
+  overflow: hidden;
 `
 
 const Header = Styled.header`
   margin-bottom: 3rem;
   padding-bottom: 3rem;
   border-bottom: solid 1px #ccc
+`
+
+const Preview = Styled.img`
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  margin-bottom: 2rem;
 `

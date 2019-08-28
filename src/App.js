@@ -28,15 +28,15 @@ class App extends Component {
   }
 
   render () {
-    return (<Layout>
+    return (<>
 
     {
       this.state.cardkit
         ? <Cardkit template={ this.state.cardkit } />
-        : <TemplateGrid setCardkit={ this.setCardkit } />
+        : <Layout><TemplateGrid setCardkit={ this.setCardkit } /></Layout>
     }
 
-    </Layout>
+    </>
     )
   }
 }

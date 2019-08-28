@@ -31,7 +31,7 @@ var configuration = {
     RobotoMed,
     RobotoBlack,
   },
-  layers,
+  layers: {},
 }
 
 
