@@ -19,7 +19,7 @@ export default {
   fontFamily: 'RobotoCond',
   fill: '#fff',
   fontWeight: 'bold',
-  draggable: true,
+  draggable: false,
 
   editable: {
     text: true,
