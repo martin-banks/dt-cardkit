@@ -3,16 +3,10 @@ import Styled from 'styled-components'
 
 import templates from '../config/templates'
 
-// function Cardkit () {
-//   return <div>
-//     <h1>This will be the cardkit page</h1>
-//   </div>
-// }
-
 class TemplateGrid extends Component {
-  constructor (props) {
-    super(props)
-  }
+  // constructor (props) {
+  //   super(props)
+  // }
 
   render () {
     return (<Layout>
