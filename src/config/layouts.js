@@ -11,10 +11,16 @@ export default {
       height: 1440,
     }
   },
-  // square: {
-  //   card: {
-  //     width: 1920,
-  //     height: 1920,
-  //   }
-  // },
+  square: {
+    card: {
+      width: 1920,
+      height: 1920,
+    }
+  },
+  'Instagram stories': {
+    card: {
+      width: 1080,
+      height: 1920,
+    },
+  },
 }

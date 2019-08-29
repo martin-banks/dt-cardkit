@@ -17,6 +17,9 @@ import quoteMarkGold from './quotemark-gold'
 import quoteDisplay from './quote-display'
 import quoteCredit from './quote-credit'
 
+import clipHalfLeft from './clip-half-left'
+import clipHalfRight from './clip-half-right'
+
 
 // ! The order the layers are listed controls the order they are rendered in
 export default {
@@ -35,5 +38,7 @@ export default {
   headlineDrag,
   headline,
   quoteDisplay,
-  quoteCredit
+  quoteCredit,
+  clipHalfLeft,
+  clipHalfRight,
 }

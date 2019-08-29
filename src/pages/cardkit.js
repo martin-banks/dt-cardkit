@@ -43,7 +43,6 @@ export default class Cardkit extends Component {
 
   componentDidMount () {
     console.log('mounted!', this.props)
-    // TODO
     console.log(configuration)
     // const config = configuration
     // config.layers = this.props.template.layerItems.map(l => layers[l])

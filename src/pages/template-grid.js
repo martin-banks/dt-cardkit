@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Styled from 'styled-components'
 
 import templates from '../config/templates'
+import placeholder from '../config/templates/previews/placeholder.jpg'
 
 class TemplateGrid extends Component {
   // constructor (props) {
@@ -21,7 +22,7 @@ class TemplateGrid extends Component {
               key={ `template-${i}` }
             >
               <Preview
-                src={ templates[k].info.preview }
+                src={ templates[k].info.preview || placeholder }
                 alt={ `${templates[k].title} preview` }
               />
               <h3>{ templates[k].info.title }</h3>

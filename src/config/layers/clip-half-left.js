@@ -1,10 +1,11 @@
 export default {
-  type: 'image',
-  name: 'Display image',
+  type: 'clip_half_left',
+  name: 'clip_half_left',
   x: 0,
   y: 0,
   draggable: true,
   width: 1920,
+  opacity: 1,
   get height () {
     return this.width;
   },
