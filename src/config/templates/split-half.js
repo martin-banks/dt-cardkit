@@ -15,8 +15,8 @@ export default {
   // Set to null to allow all sizes
   layouts: [
     '16x9',
-    // '4x3',
-    // '3z4',
-    // 'square',
+    '4x3',
+    '3x4',
+    'square',
   ]
 }
