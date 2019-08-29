@@ -10,5 +10,13 @@ export default {
   info: {
     title: 'Test: 2 image split',
     preview,
-  }
+  },
+  // Image shape/sizes
+  // Set to null to allow all sizes
+  layouts: [
+    '16x9',
+    // '4x3',
+    // '3z4',
+    // 'square',
+  ]
 }
