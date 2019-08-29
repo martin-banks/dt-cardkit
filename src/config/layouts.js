@@ -11,6 +11,12 @@ export default {
       height: 1440,
     }
   },
+  '3 x 4': {
+    card: {
+      width: 1440,
+      height: 1920,
+    },
+  },
   square: {
     card: {
       width: 1920,
