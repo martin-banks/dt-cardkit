@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import configuration from '../configuration'
 import layers from '../config/layers'
+import layouts from '../config/layouts'
 
 
 export default class Cardkit extends Component {
@@ -30,7 +31,7 @@ export default class Cardkit extends Component {
     
     const cardkitInstance = new window.CardKit(window.config.configuration, {
       // themes: window.configuration.themes,
-      layouts: window.config.layouts,
+      layouts: window.layouts,
       // templates: [], // window.config.templates,
     })
 
@@ -48,7 +49,18 @@ export default class Cardkit extends Component {
     // config.layers = this.props.template.layerItems.map(l => layers[l])
     // config.layers = configuration.layers // this.props.layers
     window.config = configuration
-    window.layouts = configuration.layouts
+
+    console.log('?', this.props.template.layouts)
+    window.layouts = !this.props.template.layouts
+      ? configuration.layouts
+      : this.props.template.layouts
+        // .filter(layout => !!layouts[layout])
+        .reduce((output, layout) => {
+          const update = output
+          update[layout] = layouts[layout]
+          return update
+        }, {})
+
     window.config.configuration.layers = this.props.template.layerItems
       .filter(layer => !!layers[layer])
       .reduce((output, layer) => {
