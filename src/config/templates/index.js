@@ -9,6 +9,6 @@ export default {
   freestyle,
   displayQuote,
   textOverlay,
-  clipHalfLeft,
+  // clipHalfLeft,
   splitHalf,
 }

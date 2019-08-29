@@ -1,4 +1,4 @@
-// import preview from './previews/display-quote.jpg'
+import preview from './previews/split-double.jpg'
 
 export default {
   layers: {},
@@ -9,7 +9,7 @@ export default {
     'clipHalfRight',
   ],
   info: {
-    title: 'Test split - half',
-    preview: null,
+    title: 'Test: 2 image split',
+    preview,
   }
 }
