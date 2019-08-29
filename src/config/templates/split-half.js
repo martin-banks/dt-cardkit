@@ -4,7 +4,6 @@ export default {
   layers: {},
 
   layerItems: [
-    // 'image',
     'clipHalfLeft',
     'clipHalfRight',
   ],
