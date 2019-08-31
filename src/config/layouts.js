@@ -18,7 +18,7 @@ export default {
     },
     ratio: '4:3',
     usecases: [
-      'Methode: Story'
+      'Story'
     ],
   },
   '3x4': {
@@ -28,7 +28,7 @@ export default {
     },
     ratio: '3:4',
     usecases: [
-      'Methode: Story portrait'
+      'Story portrait'
     ],
   },
   square: {
