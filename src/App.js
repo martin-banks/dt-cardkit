@@ -13,23 +13,75 @@ import Cardkit from './pages/cardkit'
 // }
 
 
+const Header = Styled.header`
+  display: block;
+  position: relative;
+  height: 100px;
+  color: black;
+  background: #111;
+  h1 {
+    font-size: 24px;
+    color: white;
+  }
+`
+
+const Back = Styled.button`
+  background: none;
+  border: solid 1 px white;
+  border-radius: 100px;
+  font-size: 18px;
+  /* padding: 0 20px; */
+  height: 100%;
+  width: 100%;
+  color: white;
+  &:hover {
+    background: gold;
+    color: black;
+  }
+`
+
+const HeaderWrapper = Styled.div`
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  height: 100%;
+`
+
 class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
       cardkit: null,
+      title: 'Template gallery',
     }
 
     this.setCardkit = this.setCardkit.bind(this)
+    this.backToGallery = this.backToGallery.bind(this)
   }
 
   setCardkit (template, el) {
-    this.setState({ cardkit: template })
+    this.setState({
+      cardkit: template,
+      title: `Editor / ${template.info.title}`,
+    })
+  }
+  backToGallery () {
+    /* eslint-disable */
+    location.reload()
+    /* eslint-enable */
   }
 
   render () {
     return (<>
-
+      <Header>
+        <HeaderWrapper>
+          <h1>{ this.state.title }</h1>
+          {
+            this.state.cardkit && <Back onClick={ this.backToGallery } >Back to Gallery</Back>
+          }
+        </HeaderWrapper>
+      </Header>
     {
       this.state.cardkit
         ? <Cardkit template={ this.state.cardkit } />
