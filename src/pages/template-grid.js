@@ -11,9 +11,9 @@ class TemplateGrid extends Component {
 
   render () {
     return (<Layout>
-      <Header>
-        <h1>Templates</h1>
-      </Header>
+       {/* <Header>
+         <h1>Templates</h1>
+       </Header> */}
       <Grid>
         {
           Object.keys(templates).map((k, i) => (
