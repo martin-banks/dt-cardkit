@@ -3,28 +3,75 @@ import preview from './previews/split-double.jpg'
 export default {
   layers: {},
 
-  layerItems: [
-    {
-      name: 'clipHalfLeft',
-      settings: {
-        label: 'left-image',
-        x: '0%',
-        y: '0%',
-        width: '49%',
-        height: '100%',
-      }
-    },
-    {
-      name: 'clipHalfLeft',
-      settings: {
-        label: 'right-image',
-        x: '51%',
-        y: '0%',
-        width: '49%',
-        height: '100%',
-      }
-    },
-  ],
+  // layerItems: [
+  //   {
+  //     name: 'clipHalfLeft',
+  //     settings: {
+  //       label: 'left-image',
+  //       x: '0%',
+  //       y: '0%',
+  //       width: '49%',
+  //       height: '100%',
+  //     }
+  //   },
+  //   {
+  //     name: 'clipHalfLeft',
+  //     settings: {
+  //       label: 'right-image',
+  //       x: '51%',
+  //       y: '0%',
+  //       width: '49%',
+  //       height: '100%',
+  //     }
+  //   },
+  // ],
+
+  layerItems: {
+    '16x9': [
+      {
+        name: 'clipHalfLeft',
+        settings: {
+          label: 'left-image',
+          x: '0%',
+          y: '0%',
+          width: '49%',
+          height: '100%',
+        }
+      },
+      {
+        name: 'clipHalfLeft',
+        settings: {
+          label: 'right-image',
+          x: '51%',
+          y: '0%',
+          width: '49%',
+          height: '100%',
+        }
+      },
+    ],
+    'Instagram stories': [
+      {
+        name: 'clipHalfLeft',
+        settings: {
+          label: 'left-image',
+          x: '0%',
+          y: '0%',
+          width: '100%',
+          height: '49%',
+        }
+      },
+      {
+        name: 'clipHalfLeft',
+        settings: {
+          label: 'right-image',
+          x: '0%',
+          y: '51%',
+          width: '100%',
+          height: '100%',
+        }
+      },
+    ],
+  },
   info: {
     title: 'Test: 2 image split',
     preview,
