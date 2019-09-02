@@ -19,11 +19,11 @@ export default {
   },
 
   layerItems: [
-    'image',
-    'imageMaskDrag',
-    'kickerBottom',
-    'headlineDrag',
-    'textBottom',
+    { name: 'image' },
+    { name: 'imageMaskDrag' },
+    { name: 'kickerBottom' },
+    { name: 'headlineDrag' },
+    { name: 'textBottom' },
   ],
   info: {
     title: 'Freestyle',

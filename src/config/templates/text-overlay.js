@@ -28,11 +28,11 @@ export default {
 
   },
   layerItems: [
-    'image',
-    'gradientLeft',
-    'kicker',
-    'text',
-    'headline',
+    { name: 'image' },
+    { name: 'gradientLeft' },
+    { name: 'kicker' },
+    { name: 'text' },
+    { name: 'headline' },
   ],
   info: {
     title: 'Text overlay',

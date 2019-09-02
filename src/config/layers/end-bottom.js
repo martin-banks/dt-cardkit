@@ -1,6 +1,7 @@
 export default {
   type: 'text',
-  name: 'End',
+  name: 'endBottom',
+  labe: 'End - bottom',
   x: 0,
   y: {
      attach: 'textBottom',

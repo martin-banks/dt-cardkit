@@ -2,7 +2,8 @@ import colors from '../colors'
 
 export default {
   draggable: true,
-  name: 'Rectangle',
+  name: 'imageMaskDrag',
+  label: 'Rectangle',
   type: 'rectangle',
   x: 0,
   y: {

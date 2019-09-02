@@ -3,7 +3,8 @@ import colors from '../colors'
 export default {
   draggable: true,
   type: 'text',
-  name: 'Kicker',
+  label: 'Kicker - bottom',
+  name: 'kickerBottom',
   x: 540,
   y: 90,
   // y: '62%',

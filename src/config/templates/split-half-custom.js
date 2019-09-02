@@ -10,7 +10,7 @@ export default {
         label: 'left-image',
         x: '0%',
         y: '0%',
-        width: '45%',
+        width: '49%',
         height: '100%',
       }
     },
@@ -18,9 +18,9 @@ export default {
       name: 'clipHalfLeft',
       settings: {
         label: 'right-image',
-        x: '55%',
+        x: '51%',
         y: '0%',
-        width: '45%',
+        width: '49%',
         height: '100%',
       }
     },
@@ -31,24 +31,24 @@ export default {
   },
   // Image shape/sizes
   // Set to null to allow all sizes
-  layouts: [
-    '16x9',
-    '4x3',
-    '3x4',
-    'square',
-  ],
-  layoutSettings: { 
-    '16x9': {
+  // layouts: [
+  //   '16x9',
+  //   '4x3',
+  //   '3x4',
+  //   'square',
+  // ],
+  // layoutSettings: { 
+  //   '16x9': {
       
-    },
-    '4x3': {
+  //   },
+  //   '4x3': {
       
-    },
-    '3x4': {
+  //   },
+  //   '3x4': {
       
-    },
-    'square': {
+  //   },
+  //   'square': {
       
-    },
-  }
+  //   },
+  // }
 }

@@ -2,7 +2,8 @@ import colors from '../colors'
 
 export default {
   type: 'text',
-  name: 'Headline',
+  name: 'headline',
+  label: 'Headline',
   x: 540,
   // y: 50,
   y: {

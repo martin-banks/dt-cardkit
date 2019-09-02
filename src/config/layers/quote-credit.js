@@ -2,7 +2,8 @@ import colors from '../colors'
 
 export default {
   type: 'text',
-  name: 'Quote - credit',
+  name: 'quoteCredit',
+  label: 'Quote - credit',
   x: 70,
   // y: 90,
   y: {

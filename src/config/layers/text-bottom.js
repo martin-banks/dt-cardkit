@@ -3,7 +3,8 @@ import colors from '../colors'
 export default {
   draggable: true,
   type: 'text',
-  name: 'Subtitle',
+  name: 'textBottom',
+  label: 'Subtitle',
   x: 540,
   y: {
     attach: 'headlineDrag',

@@ -1,6 +1,7 @@
 export default {
   type: 'text',
-  name: 'End',
+  name: 'end',
+  label: 'End',
   x: 0,
   y: {
      attach: 'text',

@@ -2,7 +2,8 @@
 
 export default {
   type: 'image',
-  name: 'Quote mark',
+  name: 'quoteMark',
+  label: 'Quote mark',
   // x: 70,
   // y: 70,
   // draggable: true,

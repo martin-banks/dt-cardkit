@@ -1,6 +1,7 @@
 export default {
   type: 'clip_half_left',
-  name: 'Left side image',
+  name: 'leftSideImage',
+  label: 'Left side image',
   x: 0,
   y: 0,
   draggable: true,

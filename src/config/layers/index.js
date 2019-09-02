@@ -13,7 +13,7 @@ import text from './text'
 import gradientLeft from './gradient-left'
 
 import quoteMark from './quotemark'
-import quoteMarkGold from './quotemark-gold'
+// import quoteMarkGold from './quotemark-gold'
 import quoteDisplay from './quote-display'
 import quoteCredit from './quote-credit'
 
@@ -28,7 +28,7 @@ export default {
   imageMask,
   gradientLeft,
   quoteMark,
-  quoteMarkGold,
+  // quoteMarkGold,
   end,
   endBottom,
   kickerBottom,

@@ -3,7 +3,8 @@ import colors from '../colors'
 export default {
   draggable: true,
   type: 'text',
-  name: 'Headline',
+  name: 'headlineDrag',
+  label: 'Headline',
   x: 540,
   y: {
     attach: 'kickerBottom',

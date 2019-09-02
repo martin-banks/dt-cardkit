@@ -1,8 +1,9 @@
 import colors from '../colors'
 
 export default {
-  name: 'Rectangle',
   type: 'rectangle',
+  name: 'rectangle',
+  label: 'Rectangle',
   x: 0,
   y: {
     attach: 'end',

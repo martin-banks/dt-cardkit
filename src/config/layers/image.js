@@ -1,6 +1,7 @@
 export default {
   type: 'image',
-  name: 'Display image',
+  name: 'displayImage',
+  label: 'Display image',
   x: 0,
   y: 0,
   draggable: true,

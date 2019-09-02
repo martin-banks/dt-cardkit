@@ -2,7 +2,8 @@ import colors from '../colors'
 
 export default {
   type: 'text',
-  name: 'Kicker',
+  label: 'Kicker',
+  name: 'kicker',
   x: 540,
   y: 90,
   fontSize: 48,

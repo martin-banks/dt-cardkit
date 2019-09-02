@@ -8,8 +8,8 @@ import splitHalfCustom from './split-half-custom'
 
 export default {
   splitHalfCustom,
-  // freestyle,
-  // displayQuote,
-  // textOverlay,
+  freestyle,
+  displayQuote,
+  textOverlay,
   // splitHalf,
 }
