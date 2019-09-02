@@ -1,5 +1,6 @@
 export default {
   '16x9': {
+    name: '16x9',
     card: {
       width: 1920,
       height: 1080,
@@ -12,6 +13,7 @@ export default {
     ],
   },
   '4x3': {
+    name: '4x3',
     card: {
       width: 1920,
       height: 1440,
@@ -22,6 +24,7 @@ export default {
     ],
   },
   '3x4': {
+    name: '3x4',
     card: {
       width: 1440,
       height: 1920,
@@ -32,6 +35,7 @@ export default {
     ],
   },
   square: {
+    name:'square',
     card: {
       width: 1920,
       height: 1920,
@@ -42,6 +46,7 @@ export default {
     ],
   },
   'Instagram stories': {
+    name: 'Instagram stories',
     card: {
       width: 1080,
       height: 1920,

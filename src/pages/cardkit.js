@@ -7,7 +7,6 @@ import layouts from '../config/layouts'
 export default class Cardkit extends Component {
   constructor (props) {
     super(props)
-
     this.checkForCardkit = this.checkForCardkit.bind(this)
     this.checkForCardkit = this.checkForCardkit.bind(this)
   }
@@ -32,6 +31,7 @@ export default class Cardkit extends Component {
     const cardkitInstance = new window.CardKit(window.config.configuration, {
       // themes: window.configuration.themes,
       layouts: window.layouts,
+      // templates: this.props.template,
       // templates: [], // window.config.templates,
     })
 
@@ -61,14 +61,28 @@ export default class Cardkit extends Component {
           return update
         }, {})
 
+    // window.config.configuration.layers = this.props.template.layerItems
+    //   .filter(layer => !!layers[layer])
+    //   .reduce((output, layer) => {
+    //     const update = output
+    //     console.log('layer', layer, layers[layer])
+    //     update[layer] = layers[layer]
+    //     return update
+    //   }, {})
     window.config.configuration.layers = this.props.template.layerItems
-      .filter(layer => !!layers[layer])
+      .filter(layer => {
+        console.log('layer filter', { layer, layers })
+        return !!layers[layer.name]
+      })
       .reduce((output, layer) => {
+        console.log('starting reduce')
         const update = output
-        console.log('layer', layer, layers[layer])
-        update[layer] = layers[layer]
+        console.log('layer', layer, layers[layer.name])
+        const layerClone = JSON.parse(JSON.stringify(layers[layer.name]))
+        update.push(layerClone)
         return update
-      }, {})
+      }, [])
+    window.config.configuration.template = this.props.template
     this.checkForCardkit()
   }
 
