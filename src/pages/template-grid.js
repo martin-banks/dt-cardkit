@@ -56,16 +56,16 @@ const Grid = Styled.section`
 const Template = Styled.div`
   position: relative;
   padding: 1rem;
-  border: solid 1px #ccc;
+  border: solid 1px skyblue;
   cursor: pointer;
   overflow: hidden;
 `
 
-const Header = Styled.header`
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: solid 1px #ccc
-`
+// const Header = Styled.header`
+//   margin-bottom: 3rem;
+//   padding-bottom: 3rem;
+//   border-bottom: solid 1px #ccc
+// `
 
 const Preview = Styled.img`
   display: block;
