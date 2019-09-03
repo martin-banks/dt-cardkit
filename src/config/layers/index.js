@@ -17,13 +17,15 @@ import quoteMark from './quotemark'
 import quoteDisplay from './quote-display'
 import quoteCredit from './quote-credit'
 
-import clipHalfLeft from './clip-half-left'
-import clipHalfRight from './clip-half-right'
+// import clipHalfLeft from './clip-half-left'
+// import clipHalfRight from './clip-half-right'
+import croppedImage from './cropped-image'
 
 
 // ! The order the layers are listed controls the order they are rendered in
 export default {
   image,
+  croppedImage,
   imageMaskDrag,
   imageMask,
   gradientLeft,
@@ -39,6 +41,6 @@ export default {
   headline,
   quoteDisplay,
   quoteCredit,
-  clipHalfLeft,
-  clipHalfRight,
+  // clipHalfLeft,
+  // clipHalfRight,
 }
