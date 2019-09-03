@@ -8,12 +8,14 @@ import textOverlay from './text-overlay'
 import SplitTwo from './split-two'
 import SplitThree from './split-three'
 import SplitFour from './split-four'
+import InsetSingle from './inset-single'
 
 export default {
   SplitTwo,
   SplitThree,
   SplitFour,
-  freestyle,
+  InsetSingle,
   displayQuote,
   textOverlay,
+  freestyle,
 }

@@ -21,6 +21,8 @@ import quoteCredit from './quote-credit'
 // import clipHalfRight from './clip-half-right'
 import croppedImage from './cropped-image'
 
+import rectFixed from './rect-fixed'
+
 
 // ! The order the layers are listed controls the order they are rendered in
 export default {
@@ -43,4 +45,5 @@ export default {
   quoteCredit,
   // clipHalfLeft,
   // clipHalfRight,
+  rectFixed,
 }
