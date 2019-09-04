@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "base64-img": "^1.0.4",
     "cardkit": "^2.0.6",
     "googlefontcss64": "^1.0.0",
     "googlefontcssmerge": "^1.0.0",
