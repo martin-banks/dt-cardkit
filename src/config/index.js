@@ -24,6 +24,8 @@ import croppedImage from './layers/cropped-image'
 import rectFixed from './layers/rect-fixed'
 
 import logoSportTelegraph from './logos/sport-telegraph'
+import overlayGradient from './overlays/gradient'
+import overlayGradientFromRight from './overlays/gradient-from-right'
 
 // ! The order the layers are listed controls the order they are rendered in
 export default {
@@ -49,4 +51,6 @@ export default {
   rectFixed,
 
   logoSportTelegraph,
+  overlayGradient,
+  overlayGradientFromRight,
 }

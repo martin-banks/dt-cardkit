@@ -1,5 +1,5 @@
-import dtSport from '../images/daily-telegraph-sport'
-import stSport from '../images/sunday-telegraph-sport'
+import dtSport from '../images/logos/daily-telegraph-sport'
+import stSport from '../images/logos/sunday-telegraph-sport'
 
 export default {
   type: 'image',
