@@ -1,41 +1,75 @@
 import preview from './previews/text-overlay.jpg'
 
 export default {
-  layers: {
-
-    image: { hidden: false },
-
-    // imageMaskDrag: { hidden: true },
-    // imageMask: { hidden: true },
-
-    gradientLeft: { hidden: false },
-
-    // end: { hidden: true },
-    // endBottom: { hidden: true },
-
-    // kickerBottom: { hidden: true },
-    kicker: { hidden: false },
-
-    // textBottom: { hidden: true },
-    text: { hidden: false },
-
-    // headlineDrag: { hidden: true },
-    headline: { hidden: false },
-
-    // quoteMark: { hidden: true },
-    // quoteDisplay: { hidden: true },
-    // quoteCredit: { hidden: true },
-
-  },
-  layerItems: [
-    { name: 'image' },
-    { name: 'gradientLeft' },
-    { name: 'kicker' },
-    { name: 'text' },
-    { name: 'headline' },
-  ],
   info: {
     title: 'Text overlay',
     preview,
+  },
+
+  layerItems: {
+    '16x9': [
+      {
+        name: 'image',
+        settings: {
+          label: 'image',
+        }
+      },
+      {
+        name: 'gradientLeft',
+        settings: {
+          label: 'gradient',
+        }
+      },
+      {
+        name: 'kicker',
+        settings: {
+          label: 'kicker',
+        }
+      },
+      {
+        name: 'text',
+        settings: {
+          label: 'text',
+        }
+      },
+      {
+        name: 'headline',
+        settings: {
+          label: 'footer',
+        }
+      }
+    ],
+    '4x3': [
+      {
+        name: 'image',
+        settings: {
+          label: 'image',
+        }
+      },
+      {
+        name: 'gradientLeft',
+        settings: {
+          label: 'gradient',
+        }
+      },
+      {
+        name: 'kicker',
+        settings: {
+          label: 'kicker',
+        }
+      },
+      {
+        name: 'text',
+        settings: {
+          label: 'text',
+        }
+      },
+      {
+        name: 'headline',
+        settings: {
+          label: 'footer',
+        }
+      }
+    ],
   }
 }

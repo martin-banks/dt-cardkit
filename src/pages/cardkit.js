@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import configuration from '../configuration'
-import layers from '../config/layers'
+import layers from '../config'
 import layouts from '../config/layouts'
 
 
@@ -69,10 +69,13 @@ export default class Cardkit extends Component {
     //     update[layer] = layers[layer]
     //     return update
     //   }, {})
-    window.config.configuration.layers = this.props.template.layerItems
-      .filter(layer => {
-        console.log('layer filter', { layer, layers })
-        return !!layers[layer.name]
+    const layerItemKeys = Object.keys(this.props.template.layerItems)
+    window.config.configuration.layers = this.props.template.layerItems[layerItemKeys[0]]
+      .filter((layout, i, arr) => {
+        console.log({ arr, layout })
+        console.log('layers', layers)
+        // console.log('layer filter', this.props.template.layerItems[layout])
+        return !!layers[layout.name]
       })
       .reduce((output, layer) => {
         console.log('starting reduce')
