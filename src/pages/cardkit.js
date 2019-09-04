@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import configuration from '../configuration'
-import layers from '../config/layers'
+import layers from '../config'
 import layouts from '../config/layouts'
 
 

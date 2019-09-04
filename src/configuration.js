@@ -11,7 +11,7 @@ import RobotoCondBoldItalic from './config/fonts/roboto-cond-bold-italic'
 // import decoration_freeStory from './config/decorations/free-story'
 
 import themes from './config/themes'
-import layers from './config/layers'
+import layers from './config'
 import layouts from './config/layouts'
 import templates from './config/templates'
 
