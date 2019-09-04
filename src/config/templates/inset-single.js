@@ -10,8 +10,17 @@ export default {
       {
         name: 'image',
         settings: {
+          rotate: 0,
           label: 'background-image',
         }
+      },
+      {
+        name: 'overlayGradient',
+        settings: {
+          rotate: 180,
+          x: '40%',
+          width: '60%',
+        },
       },
       {
         name: 'rectFixed',
@@ -41,6 +50,11 @@ export default {
         settings: {
           label: 'background-image',
         }
+      },
+
+      {
+        name: 'overlayGradient',
+        settings: {},
       },
       {
         name: 'rectFixed',
