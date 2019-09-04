@@ -1,5 +1,7 @@
 import preview from './previews/inset-single.jpg'
 
+import gradientBlackFromBottom from '../images/gradients/gradient-from-bottom-black'
+
 export default {
   info: {
     title: 'Inset',
@@ -151,7 +153,9 @@ export default {
       },
       {
         name: 'overlayGradientFromRight',
-        settings: {},
+        settings: {
+          src: gradientBlackFromBottom,
+        },
       },
       {
         name: 'rectFixed',
