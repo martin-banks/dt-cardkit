@@ -10,6 +10,8 @@ import SplitThree from './split-three'
 import SplitFour from './split-four'
 import InsetSingle from './inset-single'
 
+import breakingSport from './breaking-sport'
+
 export default {
   SplitTwo,
   SplitThree,
@@ -18,4 +20,5 @@ export default {
   displayQuote,
   textOverlay,
   freestyle,
+  // breakingSport,
 }
