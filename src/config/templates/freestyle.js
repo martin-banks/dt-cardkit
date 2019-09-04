@@ -8,18 +8,48 @@ export default {
 
   layerItems: {
     '16x9': [
-      { name: 'image' },
-      { name: 'imageMaskDrag' },
-      { name: 'kickerBottom' },
-      { name: 'headlineDrag' },
-      { name: 'textBottom' }
+      {
+        name: 'image',
+        settings: {},
+      },
+      {
+        name: 'imageMaskDrag',
+        settings: {},
+      },
+      {
+        name: 'kickerBottom',
+        settings: {},
+      },
+      {
+        name: 'headlineDrag',
+        settings: {},
+      },
+      {
+        name: 'textBottom',
+        settings: {},
+      }
     ],
     '4x3': [
-      { name: 'image' },
-      { name: 'imageMaskDrag' },
-      { name: 'kickerBottom' },
-      { name: 'headlineDrag' },
-      { name: 'textBottom' }
+      {
+        name: 'image',
+        settings: {},
+      },
+      {
+        name: 'imageMaskDrag',
+        settings: {},
+      },
+      {
+        name: 'kickerBottom',
+        settings: {},
+      },
+      {
+        name: 'headlineDrag',
+        settings: {},
+      },
+      {
+        name: 'textBottom',
+        settings: {},
+      }
     ],
   },
 }
