@@ -20,5 +20,5 @@ export default {
   displayQuote,
   textOverlay,
   freestyle,
-  // breakingSport,
+  breakingSport,
 }

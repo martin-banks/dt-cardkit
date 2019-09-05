@@ -10,7 +10,6 @@ import kicker from './layers/kicker'
 import textBottom from './layers/text-bottom'
 import text from './layers/text'
 
-import gradientLeft from './layers/gradient-left'
 
 import quoteMark from './layers/quotemark'
 // import quoteMarkGold from './layers/quotemark-gold'
@@ -19,13 +18,24 @@ import quoteCredit from './layers/quote-credit'
 
 // import clipHalfLeft from './layers/clip-half-left'
 // import clipHalfRight from './layers/clip-half-right'
+
+
+// * New components for demos
+
 import croppedImage from './layers/cropped-image'
 
 import rectFixed from './layers/rect-fixed'
 
 import logoSportTelegraph from './logos/sport-telegraph'
+import gradientLeft from './layers/gradient-left'
 import overlayGradient from './overlays/gradient'
 import overlayGradientFromRight from './overlays/gradient-from-right'
+import backgroundImageFixed from './backgrounds/image-fixed'
+
+import breakingKicker from './text/breaking-kicker'
+import breakingTitle from './text/breaking-title'
+import breakingText from './text/breaking-text'
+
 
 // ! The order the layers are listed controls the order they are rendered in
 export default {
@@ -53,4 +63,10 @@ export default {
   logoSportTelegraph,
   overlayGradient,
   overlayGradientFromRight,
+  backgroundImageFixed,
+
+  // Temp items for breaking demo card
+  breakingKicker,
+  breakingTitle,
+  breakingText,
 }
