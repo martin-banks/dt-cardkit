@@ -61,12 +61,6 @@ const Template = Styled.div`
   overflow: hidden;
 `
 
-const Header = Styled.header`
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-  border-bottom: solid 1px #ccc
-`
-
 const Preview = Styled.img`
   display: block;
   width: 100%;
