@@ -11,6 +11,7 @@ import SplitFour from './split-four'
 import InsetSingle from './inset-single'
 
 import breakingSport from './breaking-sport'
+import breakingNews from './breaking-news'
 
 export default {
   SplitTwo,
@@ -21,4 +22,5 @@ export default {
   textOverlay,
   freestyle,
   breakingSport,
+  breakingNews,
 }
