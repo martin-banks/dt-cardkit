@@ -19,12 +19,6 @@ export default {
         }
       },
       {
-        name: 'mastheads',
-        settings: {
-          label: 'mastheads',
-        }
-      },
-      {
         name: 'croppedImage',
         settings: {
           label: 'Second-image',
@@ -32,6 +26,13 @@ export default {
           y: '0%',
           width: '49%',
           height: '100%',
+        }
+      },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 920,
         }
       },
     ],
@@ -57,6 +58,13 @@ export default {
           height: '100%',
         }
       },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 1280,
+        }
+      },
     ],
     '3x4': [
       {
@@ -77,6 +85,13 @@ export default {
           y: '51%',
           width: '100%',
           height: '49%',
+        }
+      },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 1760,
         }
       },
     ],
@@ -101,6 +116,13 @@ export default {
           height: '100%',
         }
       },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 1760,
+        }
+      },
     ],
     'Instagram stories': [
       {
@@ -121,6 +143,13 @@ export default {
           y: '51%',
           width: '100%',
           height: '100%',
+        }
+      },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 1760,
         }
       },
     ],
