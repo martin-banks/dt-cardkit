@@ -24,10 +24,10 @@ export default {
         name: 'rectFixed',
         settings: {
           label: 'border',
-          x: '60%',
-          y: '3.5%',
-          width: '38%',
-          height: '50%',
+          x: 1300,
+          y: 40,
+          width: 580,
+          height: 800,
           fill: '#fff'
         }
       },
@@ -35,10 +35,10 @@ export default {
         name: 'croppedImage',
         settings: {
           label: 'inset-image',
-          x: '60.5%',
-          y: '4.3%',
-          width: '37%',
-          height: '48.4%',
+          x: 1310,
+          y: 50,
+          width: 560,
+          height: 780,
         }
       },
     ],
@@ -57,10 +57,10 @@ export default {
         name: 'rectFixed',
         settings: {
           label: 'border',
-          x: '60%',
-          y: '3.4%',
-          width: '38%',
-          height: '50%',
+          x: 1300,
+          y: 40,
+          width: 580,
+          height: 800,
           fill: '#fff'
         }
       },
@@ -68,10 +68,10 @@ export default {
         name: 'croppedImage',
         settings: {
           label: 'inset-image',
-          x: '60.5%',
-          y: '4.3%',
-          width: '37%',
-          height: '48.3%',
+          x: 1310,
+          y: 50,
+          width: 560,
+          height: 780,
         }
       },
     ],
@@ -125,10 +125,10 @@ export default {
         name: 'rectFixed',
         settings: {
           label: 'border',
-          x: '60%',
-          y: '3.5%',
-          width: '37%',
-          height: '45%',
+          x: 1300,
+          y: 40,
+          width: 580,
+          height: 800,
           fill: '#fff'
         }
       },
@@ -136,10 +136,10 @@ export default {
         name: 'croppedImage',
         settings: {
           label: 'inset-image',
-          x: '60.6%',
-          y: '4.2%',
-          width: '35.7%',
-          height: '43.5%',
+          x: 1310,
+          y: 50,
+          width: 560,
+          height: 780,
         }
       },
     ],
