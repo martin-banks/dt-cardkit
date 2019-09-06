@@ -37,6 +37,8 @@ import breakingKicker from './text/breaking-kicker'
 import breakingTitle from './text/breaking-title'
 import breakingText from './text/breaking-text'
 
+import mastheads from './layers/mastheads'
+
 
 // ! The order the layers are listed controls the order they are rendered in
 export default {
@@ -71,4 +73,5 @@ export default {
   breakingKicker,
   breakingTitle,
   breakingText,
+  mastheads
 }
