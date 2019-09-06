@@ -4,10 +4,33 @@ import Styled from 'styled-components'
 import templates from '../config/templates'
 import placeholder from '../config/templates/previews/placeholder.jpg'
 
+console.log({ templates })
+
 class TemplateGrid extends Component {
-  // constructor (props) {
-  //   super(props)
-  // }
+  constructor (props) {
+    super(props)
+    this.state = {
+      templates: [],
+    }
+  }
+
+  componentDidMount () {
+    const allTemplates = Object.keys(templates)
+    const templateLayouts = allTemplates.reduce((output, templateKey) => {
+      const update = output
+      Object.keys(templates[templateKey].layerItems)
+        .forEach(key => {
+          update.push({
+            layout: key,
+            template: templateKey,
+            thumb: templates[templateKey].layerItems[key].preview
+          })
+        })
+      return update
+    }, [])
+
+    this.setState({ templates: templateLayouts })
+  }
 
   render () {
     return (<Layout>
@@ -30,6 +53,33 @@ class TemplateGrid extends Component {
           ))
         }
       </Grid>
+
+      <hr />
+
+      <Grid>
+        {
+          this.state.templates.map((template, i) => (
+            <Template
+              // onClick={ this.props.setCardkit.bind(null, template) }
+              key={ `template-${i}` }
+            >
+              <Preview
+                src={ template.thumb || placeholder }
+                alt={ `${template.template}-${template.layout}-thumb` }
+                />
+              <h6>{ template.layout }</h6>
+              <h3>{ template.template }</h3>
+            </Template>
+          ))
+        }
+      </Grid>
+
+      <pre>
+        Pay no attention to the man behind the curtain: 
+        <code>
+          { JSON.stringify(this.state.templates, 'utf8', 2) }
+        </code>
+      </pre>
 
     </Layout>
     )
