@@ -4,6 +4,7 @@ import Styled from 'styled-components'
 import Layout from './components/layout'
 import TemplateGrid from './pages/template-grid'
 import Cardkit from './pages/cardkit'
+import googleAnalytics from './functions/google-analytics'
 
 
 // function Cardkit () {
@@ -65,11 +66,24 @@ class App extends Component {
       cardkit: template,
       title: `Editor / ${template.info.title}`,
     })
+    /* eslint-disable */
+    ga('send', {
+      hitType: 'event',
+      eventAction: 'template-set',
+      eventCategory: 'CardKit templates',
+      eventLabel: template.info.title,
+      hitCallback: () => console.log('event sent', template.info.title),
+    })
+    /* eslint-enable */
   }
   backToGallery () {
     /* eslint-disable */
     location.reload()
     /* eslint-enable */
+  }
+
+  componentDidMount () {
+    googleAnalytics.setup()
   }
 
   render () {

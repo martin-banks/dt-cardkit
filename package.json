@@ -5,6 +5,7 @@
   "dependencies": {
     "base64-img": "^1.0.4",
     "cardkit": "^2.0.6",
+    "googleanalytics": "^0.4.0",
     "googlefontcss64": "^1.0.0",
     "googlefontcssmerge": "^1.0.0",
     "react": "^16.8.6",
