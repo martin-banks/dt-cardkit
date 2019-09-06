@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Styled from 'styled-components'
 
-import templates from '../config/templates'
+// import templates from '../config/templates'
 import placeholder from '../config/templates/previews/placeholder.jpg'
 
-console.log({ templates })
+// console.log({ templates })
 
 class TemplateGrid extends Component {
   constructor (props) {
@@ -15,15 +15,15 @@ class TemplateGrid extends Component {
   }
 
   componentDidMount () {
-    const allTemplates = Object.keys(templates)
+    const allTemplates = Object.keys(this.props.templates)
     const templateLayouts = allTemplates.reduce((output, templateKey) => {
       const update = output
-      Object.keys(templates[templateKey].layerItems)
+      Object.keys(this.props.templates[templateKey].layerItems)
         .forEach(key => {
           update.push({
             layout: key,
             template: templateKey,
-            thumb: templates[templateKey].layerItems[key].preview
+            thumb: this.props.templates[templateKey].layerItems[key].preview
           })
         })
       return update
@@ -39,16 +39,16 @@ class TemplateGrid extends Component {
        </Header> */}
       <Grid>
         {
-          Object.keys(templates).map((k, i) => (
+          Object.keys(this.props.templates).map((k, i) => (
             <Template
-              onClick={ this.props.setCardkit.bind(null, templates[k]) }
+              onClick={ this.props.setCardkit.bind(null, this.props.templates[k]) }
               key={ `template-${i}` }
             >
               <Preview
-                src={ templates[k].info.preview || placeholder }
-                alt={ `${templates[k].title} preview` }
+                src={ this.props.templates[k].info.preview || placeholder }
+                alt={ `${this.props.templates[k].title} preview` }
               />
-              <h3>{ templates[k].info.title }</h3>
+              <h3>{ this.props.templates[k].info.title }</h3>
             </Template>
           ))
         }
@@ -56,7 +56,35 @@ class TemplateGrid extends Component {
 
       <hr />
 
-      <Grid>
+      <Grid>{
+        Object.keys(this.props.templates)
+          .reduce((output, templateKey) => {
+            const update = output
+            Object.keys(this.props.templates[templateKey].layerItems)
+              .forEach(key => {
+                update.push({
+                  layout: key,
+                  template: templateKey,
+                  thumb: this.props.templates[templateKey].layerItems[key].preview
+                })
+              })
+            return update
+          }, [])
+          .filter(template => !this.props.layout || template.layout === this.props.layout)
+          .map((template, i) => <Template
+            // onClick={ this.props.setCardkit.bind(null, template) }
+            key={ `template-${i}` }
+          >
+          {/* <Preview
+            src={ template.thumb || placeholder }
+            alt={ `${template.template}-${template.layout}-thumb` }
+          /> */}
+          <h6>{ template.layout }</h6>
+          <h3>{ template.template }</h3>
+        </Template>)
+      }</Grid>
+
+      {/* <Grid>
         {
           this.state.templates.map((template, i) => (
             <Template
@@ -72,7 +100,7 @@ class TemplateGrid extends Component {
             </Template>
           ))
         }
-      </Grid>
+      </Grid> */}
 
       <pre>
         Pay no attention to the man behind the curtain: 

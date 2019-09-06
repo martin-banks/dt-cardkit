@@ -5,6 +5,8 @@ import Layout from './components/layout'
 import TemplateGrid from './pages/template-grid'
 import Cardkit from './pages/cardkit'
 import googleAnalytics from './functions/google-analytics'
+import templates from './config/templates'
+import { thisExpression } from '@babel/types'
 
 
 // function Cardkit () {
@@ -55,10 +57,13 @@ class App extends Component {
     this.state = {
       cardkit: null,
       title: 'Template gallery',
+      templates,
+      layout: false,
     }
 
     this.setCardkit = this.setCardkit.bind(this)
     this.backToGallery = this.backToGallery.bind(this)
+    this.setLayout = this.setLayout.bind(this)
   }
 
   setCardkit (template, el) {
@@ -82,8 +87,23 @@ class App extends Component {
     /* eslint-enable */
   }
 
+  setLayout () {
+    const layoutSet = Object.keys(this.state.templates)
+      .filter(key => this.state.templates[key].layerItems['Instagram stories'])
+      .reduce((output, key) => {
+        const update = output
+        update[key] = this.state.templates[key]
+        return update
+      }, {})
+    this.setState({
+      templates: layoutSet,
+      layout: 'Instagram stories'
+    })
+  }
+
   componentDidMount () {
     googleAnalytics.setup()
+    console.log({ templates })
   }
 
   render () {
@@ -96,10 +116,17 @@ class App extends Component {
           }
         </HeaderWrapper>
       </Header>
+      <button onClick={ this.setLayout }>Instagram Stories</button>
     {
       this.state.cardkit
         ? <Cardkit template={ this.state.cardkit } />
-        : <Layout><TemplateGrid setCardkit={ this.setCardkit } /></Layout>
+        : <Layout>
+            <TemplateGrid
+              setCardkit={ this.setCardkit }
+              templates={ this.state.templates }
+              layout={ this.state.layout }
+            />
+          </Layout>
     }
 
     </>
