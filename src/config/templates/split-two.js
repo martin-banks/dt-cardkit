@@ -1,5 +1,6 @@
 import preview from './previews/split-two.jpg'
 
+
 export default {
   info: {
     title: 'Split 2',
@@ -15,6 +16,12 @@ export default {
           y: '0%',
           width: '49%',
           height: '100%',
+        }
+      },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
         }
       },
       {
