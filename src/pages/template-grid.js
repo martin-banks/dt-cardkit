@@ -3,6 +3,8 @@ import Styled from 'styled-components'
 
 // import templates from '../config/templates'
 import placeholder from '../config/templates/previews/placeholder.jpg'
+import layouts from '../config/layouts'
+import { jsxClosingElement } from '@babel/types'
 
 // console.log({ templates })
 
@@ -64,15 +66,16 @@ class TemplateGrid extends Component {
               .forEach(key => {
                 update.push({
                   layout: key,
-                  template: templateKey,
-                  thumb: this.props.templates[templateKey].layerItems[key].preview
+                  templateName: templateKey,
+                  thumb: this.props.templates[templateKey].layerItems[key].preview,
+                  template: this.props.templates[templateKey],
                 })
               })
             return update
           }, [])
           .filter(template => !this.props.layout || template.layout === this.props.layout)
           .map((template, i) => <Template
-            // onClick={ this.props.setCardkit.bind(null, template) }
+            onClick={ this.props.setCardkit.bind(null, template.template) }
             key={ `template-${i}` }
           >
           {/* <Preview
@@ -80,7 +83,18 @@ class TemplateGrid extends Component {
             alt={ `${template.template}-${template.layout}-thumb` }
           /> */}
           <h6>{ template.layout }</h6>
-          <h3>{ template.template }</h3>
+          <h3>{ template.templateName }</h3>
+          <p>Used for:</p>
+          <ul>
+            {
+              layouts[template.layout].usecases
+                .map(usecase => <li
+                    key={ `usecase-${template.template}-${usecase}` }
+                  >{ usecase }</li>
+                )
+            }
+          </ul>
+
         </Template>)
       }</Grid>
 
