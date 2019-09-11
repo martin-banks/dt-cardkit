@@ -64,6 +64,7 @@ class TemplateGrid extends Component {
       <Grid>
         {
           Object.keys(layouts).map(layout => <ButtonFilter
+              key={ `filter-button-${layout}` }
               onClick={ this.props.filterLayouts.bind(null, layout) }
             >
               { layout }
@@ -87,8 +88,9 @@ class TemplateGrid extends Component {
             const update = output
             Object.keys(this.props.templates[templateKey].layerItems)
               .forEach(layout => {
-                const newTemplateObj = this.props.templates[templateKey]
+                const newTemplateObj = JSON.parse(JSON.stringify(this.props.templates[templateKey]))
                 newTemplateObj.defaultLayout = layout
+                console.log({ layout })
                 update.push({
                   layout,
                   templateName: templateKey,
@@ -100,15 +102,15 @@ class TemplateGrid extends Component {
           }, [])
           .filter(template => !this.props.showLayout || (template.layout === this.props.showLayout))
           .map((template, i) => <Template
+            key={ `template-${i}` }
             onClick={ this.props.setCardkit.bind(
               null,
               {
                 template: template.template,
                 layout: template.layout
               }
-            )
-          }
-            key={ `template-${i}` }
+              )
+            }
           >
           {/* <Preview
             src={ template.thumb || placeholder }
@@ -116,6 +118,11 @@ class TemplateGrid extends Component {
           /> */}
           <h6>{ template.layout }</h6>
           <h3>{ template.templateName }</h3>
+          <Preview
+            // src={ template.template.info.preview || placeholder }
+            src={ placeholder }
+            alt={ `${template.template.title} preview` }
+          />
           <p>Used for:</p>
           <ul>
             {

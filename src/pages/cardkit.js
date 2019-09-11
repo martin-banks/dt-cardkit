@@ -23,19 +23,27 @@ export default class Cardkit extends Component {
   }
 
   startCardkit () {
-    console.log('stating cardkit...')
+    console.log('\n\n--------------\n')
+    console.log('starting cardkit...')
     console.log(window.config, configuration)
     console.log({ layers })
+    console.log('PROPS', this.props)
+    console.log('\n--------------\n\n')
     // Initialise CardKit
-    
-    const cardkitInstance = new window.CardKit(window.config.configuration, {
-      // themes: window.configuration.themes,
-      layouts: window.layouts,
-      // TODO Set the default from the card clicked on
-      defaultLayout: this.props.layout,
-      // templates: this.props.template,
-      // templates: [], // window.config.templates,
-    })
+    const config = JSON.parse(JSON.stringify(window.config.configuration, 'utf8', 2))
+    console.log({ config })
+    // config.useLayout = 'square'
+    const cardkitInstance = new window.CardKit(
+      config, // window.config.configuration,
+      {
+        // themes: window.configuration.themes,
+        layouts: window.layouts,
+        defaultLayout: this.props.layout, // '4x3',
+        // activeLayout: '4x3',
+        // templates: this.props.template,
+        // templates: [], // window.config.templates,
+      }
+    )
 
     // Initialise Renderer
     const renderer = new window.CardKitDOM(cardkitInstance)
