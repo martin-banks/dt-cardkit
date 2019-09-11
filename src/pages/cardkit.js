@@ -82,15 +82,15 @@ export default class Cardkit extends Component {
     const layerItemKeys = Object.keys(this.props.template.layerItems)
     window.config.configuration.layers = this.props.template.layerItems[layerItemKeys[0]]
       .filter((layout, i, arr) => {
-        console.log({ arr, layout })
-        console.log('layers', layers)
+        // console.log({ arr, layout })
+        // console.log('layers', layers)
         // console.log('layer filter', this.props.template.layerItems[layout])
         return !!layers[layout.name]
       })
       .reduce((output, layer) => {
-        console.log('starting reduce')
+        // console.log('starting reduce')
+        // console.log('layer', layer, layers[layer.name])
         const update = output
-        console.log('layer', layer, layers[layer.name])
         const layerClone = JSON.parse(JSON.stringify(layers[layer.name]))
         update.push(layerClone)
         return update

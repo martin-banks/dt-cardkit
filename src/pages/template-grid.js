@@ -90,7 +90,6 @@ class TemplateGrid extends Component {
               .forEach(layout => {
                 const newTemplateObj = JSON.parse(JSON.stringify(this.props.templates[templateKey]))
                 newTemplateObj.defaultLayout = layout
-                console.log({ layout })
                 update.push({
                   layout,
                   templateName: templateKey,
