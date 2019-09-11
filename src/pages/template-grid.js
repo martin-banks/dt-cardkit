@@ -6,7 +6,6 @@ import placeholder from '../config/templates/previews/placeholder.jpg'
 import layouts from '../config/layouts'
 import { jsxClosingElement } from '@babel/types'
 
-// console.log({ templates })
 
 class TemplateGrid extends Component {
   constructor (props) {
@@ -39,7 +38,7 @@ class TemplateGrid extends Component {
        {/* <Header>
          <h1>Templates</h1>
        </Header> */}
-      <Grid>
+      {/* <Grid>
         {
           Object.keys(this.props.templates).map((k, i) => (
             <Template
@@ -56,7 +55,31 @@ class TemplateGrid extends Component {
         }
       </Grid>
 
+      <hr /> */}
+
+      <label>
+        Filter layouts
+      </label>
+
+      <Grid>
+        {
+          Object.keys(layouts).map(layout => <ButtonFilter
+              onClick={ this.props.filterLayouts.bind(null, layout) }
+            >
+              { layout }
+            </ButtonFilter>
+          )
+        }
+        <ButtonFilter
+          onClick={ this.props.filterLayouts.bind(null, false) }
+        >
+          Show all
+        </ButtonFilter>
+        
+      </Grid>
+
       <hr />
+
 
       <Grid>{
         Object.keys(this.props.templates)
@@ -66,7 +89,6 @@ class TemplateGrid extends Component {
               .forEach(layout => {
                 const newTemplateObj = this.props.templates[templateKey]
                 newTemplateObj.defaultLayout = layout
-                console.log({ layout })
                 update.push({
                   layout,
                   templateName: templateKey,
@@ -153,6 +175,7 @@ const Grid = Styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 4px;
+  margin-bottom: 3rem;
 `
 
 const Template = Styled.div`
@@ -169,4 +192,11 @@ const Preview = Styled.img`
   height: auto;
   margin: 0;
   margin-bottom: 2rem;
+`
+
+const ButtonFilter = Styled.button`
+  padding: 1rem 2rem;
+  border: solid 1px #ccc;
+  font-size: 2rem;
+  border-radius: 0.5rem;
 `

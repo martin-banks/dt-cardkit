@@ -64,13 +64,13 @@ class App extends Component {
 
     this.setCardkit = this.setCardkit.bind(this)
     this.backToGallery = this.backToGallery.bind(this)
-    this.setLayout = this.setLayout.bind(this)
+    this.filterLayouts = this.filterLayouts.bind(this)
   }
 
   setCardkit (config, el) {
     // Sets the options to use in CardKit
     // Also triggers CardKit render
-    console.log('\n\n\n\n\nTemplate to set cardkit', {config}, '\n\n\n\n\n\n')
+    // console.log('\n\n\n\n\nTemplate to set cardkit', {config}, '\n\n\n\n\n\n')
     this.setState({
       cardkit: config.template,
       title: `Editor / ${config.template.info.title}`,
@@ -82,7 +82,7 @@ class App extends Component {
       eventAction: 'template-set',
       eventCategory: 'CardKit templates',
       eventLabel: config.template.info.title,
-      hitCallback: () => console.log('event sent', config.template.info.title),
+      // hitCallback: () => console.log('event sent', config.template.info.title),
     })
     /* eslint-enable */
   }
@@ -92,7 +92,7 @@ class App extends Component {
     /* eslint-enable */
   }
 
-  setLayout () {
+  filterLayouts (layout) {
     // Filters the layouts shown in new granular grid
     const layoutSet = Object.keys(this.state.templates)
       .filter(key => this.state.templates[key].layerItems['Instagram stories'])
@@ -103,13 +103,13 @@ class App extends Component {
       }, {})
     this.setState({
       templates: layoutSet,
-      showLayout: 'Instagram stories'
+      showLayout: layout, // 'Instagram stories'
     })
   }
 
   componentDidMount () {
     googleAnalytics.setup()
-    console.log({ templates })
+    // console.log({ templates })
   }
 
   render () {
@@ -123,7 +123,6 @@ class App extends Component {
         </HeaderWrapper>
       </Header>
 
-      <button onClick={ this.setLayout }>Instagram Stories</button>
     {
       this.state.cardkit
         ? <Cardkit template={ this.state.cardkit } layout={ this.state.layout }/>
@@ -133,6 +132,7 @@ class App extends Component {
               setCardkit={ this.setCardkit }
               templates={ this.state.templates }
               showLayout={ this.state.showLayout }
+              filterLayouts={ this.filterLayouts }
             />
           </Layout>
     }
@@ -153,7 +153,7 @@ export default App
 // window.layouts = config.layouts
 
 // function startCardKit () {
-//   console.log('stating...')
+  console.log('stating...')
 //   // Initialise CardKit
 //   var cardkit = new window.CardKit(window.config.configuration, {
 //     themes: window.config.themes,
@@ -169,7 +169,7 @@ export default App
 // }
 
 // function checkForCardkit () {
-//   console.log('checking...')
+  console.log('checking...')
 //   if (window.CardKit && window.CardKitDOM) {
 //     startCardKit()
 //   } else {
