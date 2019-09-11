@@ -89,11 +89,14 @@ class TemplateGrid extends Component {
             Object.keys(this.props.templates[templateKey].layerItems)
               .forEach(layout => {
                 const newTemplateObj = JSON.parse(JSON.stringify(this.props.templates[templateKey]))
+                const { thumbs, preview } = this.props.templates[templateKey].info
+                console.log({ thumbs })
                 newTemplateObj.defaultLayout = layout
                 update.push({
                   layout,
-                  templateName: templateKey,
-                  thumb: this.props.templates[templateKey].layerItems[layout].preview,
+                  templateName: this.props.templates[templateKey].info.title, // templateKey,
+                  // thumb: this.props.templates[templateKey].layerItems[layout].preview,
+                  thumb: thumbs ? thumbs[layout] : preview,
                   template: newTemplateObj,
                 })
               })
@@ -119,7 +122,7 @@ class TemplateGrid extends Component {
           <h3>{ template.templateName }</h3>
           <Preview
             // src={ template.template.info.preview || placeholder }
-            src={ placeholder }
+            src={ template.thumb }
             alt={ `${template.template.title} preview` }
           />
           <p>Used for:</p>
@@ -195,8 +198,9 @@ const Template = Styled.div`
 const Preview = Styled.img`
   display: block;
   width: 100%;
-  height: auto;
-  margin: 0;
+  height: 150px;
+  object-fit: scale-down;
+  margin: 0 auto;
   margin-bottom: 2rem;
 `
 
