@@ -58,7 +58,8 @@ class App extends Component {
       cardkit: null,
       title: 'Template gallery',
       templates,
-      layout: false,
+      layout: 'square',
+      showLayout: null
     }
 
     this.setCardkit = this.setCardkit.bind(this)
@@ -66,18 +67,22 @@ class App extends Component {
     this.setLayout = this.setLayout.bind(this)
   }
 
-  setCardkit (template, el) {
+  setCardkit (config, el) {
+    // Sets the options to use in CardKit
+    // Also triggers CardKit render
+    console.log('\n\n\n\n\nTemplate to set cardkit', {config}, '\n\n\n\n\n\n')
     this.setState({
-      cardkit: template,
-      title: `Editor / ${template.info.title}`,
+      cardkit: config.template,
+      title: `Editor / ${config.template.info.title}`,
+      layout: config.layout, // '16x9',
     })
     /* eslint-disable */
     ga('send', {
       hitType: 'event',
       eventAction: 'template-set',
       eventCategory: 'CardKit templates',
-      eventLabel: template.info.title,
-      hitCallback: () => console.log('event sent', template.info.title),
+      eventLabel: config.template.info.title,
+      hitCallback: () => console.log('event sent', config.template.info.title),
     })
     /* eslint-enable */
   }
@@ -88,6 +93,7 @@ class App extends Component {
   }
 
   setLayout () {
+    // Filters the layouts shown in new granular grid
     const layoutSet = Object.keys(this.state.templates)
       .filter(key => this.state.templates[key].layerItems['Instagram stories'])
       .reduce((output, key) => {
@@ -97,7 +103,7 @@ class App extends Component {
       }, {})
     this.setState({
       templates: layoutSet,
-      layout: 'Instagram stories'
+      showLayout: 'Instagram stories'
     })
   }
 
@@ -116,15 +122,17 @@ class App extends Component {
           }
         </HeaderWrapper>
       </Header>
+
       <button onClick={ this.setLayout }>Instagram Stories</button>
     {
       this.state.cardkit
-        ? <Cardkit template={ this.state.cardkit } />
-        : <Layout>
+        ? <Cardkit template={ this.state.cardkit } layout={ this.state.layout }/>
+        :
+        <Layout>
             <TemplateGrid
               setCardkit={ this.setCardkit }
               templates={ this.state.templates }
-              layout={ this.state.layout }
+              showLayout={ this.state.showLayout }
             />
           </Layout>
     }

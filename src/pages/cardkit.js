@@ -32,7 +32,7 @@ export default class Cardkit extends Component {
       // themes: window.configuration.themes,
       layouts: window.layouts,
       // TODO Set the default from the card clicked on
-      defaultLayout: 'Instagram stories',
+      defaultLayout: this.props.layout,
       // templates: this.props.template,
       // templates: [], // window.config.templates,
     })

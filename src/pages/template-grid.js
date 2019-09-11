@@ -63,19 +63,29 @@ class TemplateGrid extends Component {
           .reduce((output, templateKey) => {
             const update = output
             Object.keys(this.props.templates[templateKey].layerItems)
-              .forEach(key => {
+              .forEach(layout => {
+                const newTemplateObj = this.props.templates[templateKey]
+                newTemplateObj.defaultLayout = layout
+                console.log({ layout })
                 update.push({
-                  layout: key,
+                  layout,
                   templateName: templateKey,
-                  thumb: this.props.templates[templateKey].layerItems[key].preview,
-                  template: this.props.templates[templateKey],
+                  thumb: this.props.templates[templateKey].layerItems[layout].preview,
+                  template: newTemplateObj,
                 })
               })
             return update
           }, [])
-          .filter(template => !this.props.layout || template.layout === this.props.layout)
+          .filter(template => !this.props.showLayout || (template.layout === this.props.showLayout))
           .map((template, i) => <Template
-            onClick={ this.props.setCardkit.bind(null, template.template) }
+            onClick={ this.props.setCardkit.bind(
+              null,
+              {
+                template: template.template,
+                layout: template.layout
+              }
+            )
+          }
             key={ `template-${i}` }
           >
           {/* <Preview
