@@ -57,7 +57,7 @@ class App extends Component {
     this.state = {
       cardkit: null,
       title: 'Template gallery',
-      templates,
+      templates: JSON.parse(JSON.stringify(templates)),
       layout: null, // 'square',
       showLayout: null
     }
@@ -97,14 +97,21 @@ class App extends Component {
 
   filterLayouts (layout) {
     // Filters the layouts shown in new granular grid
-    const layoutSet = Object.keys(this.state.templates)
+    if (!layout) {
+      this.setState({
+        templates,
+        showLayout: layout,
+      })
+      return
+    }
+    const layoutSet = Object.keys(templates)
       .filter(key => {
         if (!layout) return true
-        return this.state.templates[key].layerItems[layout]
+        return templates[key].layerItems[layout]
       })
       .reduce((output, key) => {
         const update = output
-        update[key] = this.state.templates[key]
+        update[key] = templates[key]
         return update
       }, {})
     this.setState({

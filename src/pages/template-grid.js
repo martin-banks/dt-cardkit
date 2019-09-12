@@ -85,11 +85,12 @@ class TemplateGrid extends Component {
         Object.keys(this.props.templates)
           .reduce((output, templateKey) => {
             const update = output
+            if (!this.props.templates[templateKey]) return update
             Object.keys(this.props.templates[templateKey].layerItems)
               .forEach(layout => {
                 const newTemplateObj = JSON.parse(JSON.stringify(this.props.templates[templateKey]))
                 const { thumbs, preview } = this.props.templates[templateKey].info
-                console.log({ thumbs })
+                // console.log({ thumbs })
                 newTemplateObj.defaultLayout = layout
                 update.push({
                   layout,
