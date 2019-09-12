@@ -45,6 +45,7 @@ export default {
         name: 'mastheads',
         settings: {
           label: 'mastheads',
+          y: 920,
         }
       },
     ],
@@ -74,6 +75,7 @@ export default {
         name: 'mastheads',
         settings: {
           label: 'mastheads',
+          y: 1280,
         }
       },
     ],
@@ -102,6 +104,7 @@ export default {
         name: 'mastheads',
         settings: {
           label: 'mastheads',
+          y: 1760,
         }
       },
     ],
@@ -130,6 +133,7 @@ export default {
         name: 'mastheads',
         settings: {
           label: 'mastheads',
+          y: 1760,
         }
       },
     ],
@@ -158,6 +162,7 @@ export default {
         name: 'mastheads',
         settings: {
           label: 'mastheads',
+          y: 1760,
         }
       },
     ],
