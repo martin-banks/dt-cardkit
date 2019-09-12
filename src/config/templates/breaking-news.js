@@ -1,5 +1,11 @@
 import preview from './previews/breaking-news.jpg'
 
+import majorEvent from './previews/breaking-news/16x9.jpg'
+// import story from './previews/breaking-news/4x3.jpg'
+// import portrait from './previews/breaking-news/3x4.jpg'
+import square from './previews/breaking-news/square.jpg'
+import instaStories from './previews/breaking-news/Instagram stories.jpg'
+
 import background16x9 from '../images/backgrounds/breaking-news/16x9'
 import backgroundInstagramStories from '../images/backgrounds/breaking-news/instagram-stories'
 import backgroundsquare from '../images/backgrounds/breaking-news/square'
@@ -8,6 +14,13 @@ export default {
   info: {
     title: 'Breaking: News',
     preview,
+    thumbs: {
+      '16x9': majorEvent,
+      // '4x3': story,
+      // '3x4': portrait,
+      'square': square,
+      'Instagram stories': instaStories,
+    },
   },
   layerItems: {
     '16x9': [

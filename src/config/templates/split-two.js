@@ -1,10 +1,23 @@
 import preview from './previews/split-two.jpg'
 
+import majorEvent from './previews/2-split/16x9.jpg'
+import story from './previews/2-split/4x3.jpg'
+import portrait from './previews/2-split/3x4.jpg'
+import square from './previews/2-split/square.jpg'
+import instaStories from './previews/2-split/Instagram stories.jpg'
+
 
 export default {
   info: {
     title: 'Split 2',
     preview,
+    thumbs: {
+      '16x9': majorEvent,
+      '4x3': story,
+      '3x4': portrait,
+      'square': square,
+      'Instagram stories': instaStories,
+    },
   },
   layerItems: {
     '16x9': [
