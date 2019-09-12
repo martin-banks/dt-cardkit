@@ -21,7 +21,6 @@ export default {
     ratio: '4:3',
     usecases: [
       'Methode: Story',
-      'Methode: Thumbnail',
     ],
   },
   '3x4': {
