@@ -98,7 +98,10 @@ class App extends Component {
   filterLayouts (layout) {
     // Filters the layouts shown in new granular grid
     const layoutSet = Object.keys(this.state.templates)
-      .filter(key => this.state.templates[key].layerItems[layout])
+      .filter(key => {
+        if (!layout) return true
+        return this.state.templates[key].layerItems[layout]
+      })
       .reduce((output, key) => {
         const update = output
         update[key] = this.state.templates[key]
@@ -116,7 +119,7 @@ class App extends Component {
   }
 
   render () {
-    return (<>
+    return (<Frame>
       <Header>
         <HeaderWrapper>
           <h1>{ this.state.title }</h1>
@@ -143,7 +146,7 @@ class App extends Component {
           </Layout>
     }
 
-    </>
+    </Frame>
     )
   }
 }
@@ -152,6 +155,10 @@ export default App
 
 
 
+
+const Frame = Styled.article`
+  background: #eee;
+`
 
 
 // window.config = config
