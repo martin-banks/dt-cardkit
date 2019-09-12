@@ -76,10 +76,9 @@ class TemplateGrid extends Component {
         >
           Show all
         </ButtonFilter>
-        
       </Grid>
 
-      <hr />
+      <Divider />
 
 
       <Grid>{
@@ -125,7 +124,7 @@ class TemplateGrid extends Component {
             src={ template.thumb }
             alt={ `${template.template.title} preview` }
           />
-          <p>Used for:</p>
+          <p className="label">Used for:</p>
           <ul>
             {
               layouts[template.layout].usecases
@@ -157,12 +156,12 @@ class TemplateGrid extends Component {
         }
       </Grid> */}
 
-      <pre>
+      {/* <pre>
         Pay no attention to the man behind the curtain: 
         <code>
           { JSON.stringify(this.state.templates, 'utf8', 2) }
         </code>
-      </pre>
+      </pre> */}
 
     </Layout>
     )
@@ -183,17 +182,41 @@ const Layout = Styled.article`
 const Grid = Styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 4px;
+  gap: 1rem;
   margin-bottom: 3rem;
 `
 
 const Template = Styled.div`
+  box-sizing: border-box;
   position: relative;
   padding: 1rem;
-  border: solid 1px #ccc;
+  /* border: solid 1px #ccc; */
   cursor: pointer;
   overflow: hidden;
-`
+  background: white;
+  border-radius: 4px;
+  vertical-align: top;
+  text-align: center;
+  p.label {
+    margin: 0;
+    font-weight: 800;
+  }
+  ul {
+    padding: 0;
+    padding-left: 0;
+    /* padding-left: 20px; */
+    margin: 0;
+    list-style: none;
+    li {
+      padding: 0;
+    }
+  }
+  &:hover {
+    /* border: solid 1px skyblue; */
+    box-shadow: 0 0 3rem skyblue;
+    z-index: 99;
+  }
+` 
 
 const Preview = Styled.img`
   display: block;
@@ -202,6 +225,8 @@ const Preview = Styled.img`
   object-fit: scale-down;
   margin: 0 auto;
   margin-bottom: 2rem;
+  background: linear-gradient(to top, #111, #555);
+  padding: 1rem;
 `
 
 const ButtonFilter = Styled.button`
@@ -209,4 +234,8 @@ const ButtonFilter = Styled.button`
   border: solid 1px #ccc;
   font-size: 2rem;
   border-radius: 0.5rem;
+`
+
+const Divider = Styled.hr`
+  border-bottom: solid 0.5rem #888;
 `
