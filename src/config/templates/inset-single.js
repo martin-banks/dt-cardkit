@@ -1,11 +1,24 @@
 import preview from './previews/inset-single.jpg'
 
+import majorEvent from './previews/inset-top-right/16x9.jpg'
+import story from './previews/inset-top-right/4x3.jpg'
+import portrait from './previews/inset-top-right/3x4.jpg'
+import square from './previews/inset-top-right/square.jpg'
+import instaStories from './previews/inset-top-right/Instagram stories.jpg'
+
 import gradientBlackFromBottom from '../images/gradients/gradient-from-bottom-black'
 
 export default {
   info: {
     title: 'Inset',
     preview,
+    thumbs: {
+      '16x9': majorEvent,
+      '4x3': story,
+      '3x4': portrait,
+      'square': square,
+      'Instagram stories': instaStories,
+    },
   },
   layerItems: {
     '16x9': [

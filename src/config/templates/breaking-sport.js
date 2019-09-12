@@ -1,5 +1,11 @@
 import preview from './previews/breaking-sport.jpg'
 
+import majorEvent from './previews/breaking-sport/16x9.jpg'
+// import story from './previews/breaking-sport/4x3.jpg'
+// import portrait from './previews/breaking-sport/3x4.jpg'
+import square from './previews/breaking-sport/square.jpg'
+import instaStories from './previews/breaking-sport/Instagram stories.jpg'
+
 import background16x9 from '../images/backgrounds/breaking-sport/16x9'
 import backgroundInstagramStories from '../images/backgrounds/breaking-sport/instagram-stories'
 import backgroundsquare from '../images/backgrounds/breaking-sport/square'
@@ -8,6 +14,13 @@ export default {
   info: {
     title: 'Breaking: Sport',
     preview,
+    thumbs: {
+      '16x9': majorEvent,
+      // '4x3': story,
+      // '3x4': portrait,
+      'square': square,
+      'Instagram stories': instaStories,
+    },
   },
   layerItems: {
     '16x9': [

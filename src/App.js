@@ -5,6 +5,8 @@ import Layout from './components/layout'
 import TemplateGrid from './pages/template-grid'
 import Cardkit from './pages/cardkit'
 import googleAnalytics from './functions/google-analytics'
+import templates from './config/templates'
+import { thisExpression } from '@babel/types'
 
 
 // function Cardkit () {
@@ -55,24 +57,35 @@ class App extends Component {
     this.state = {
       cardkit: null,
       title: 'Template gallery',
+      templates: JSON.parse(JSON.stringify(templates)),
+      layout: null, // 'square',
+      showLayout: null
     }
 
     this.setCardkit = this.setCardkit.bind(this)
     this.backToGallery = this.backToGallery.bind(this)
+    this.filterLayouts = this.filterLayouts.bind(this)
   }
 
-  setCardkit (template, el) {
-    this.setState({
-      cardkit: template,
-      title: `Editor / ${template.info.title}`,
-    })
+  setCardkit (config, el) {
+    // Sets the options to use in CardKit
+    // Also triggers CardKit render
+    console.log('\n\n\n\n\nTemplate to set cardkit', {config}, '\n\n\n\n\n\n')
+    // const template = JSON.parse(JSON.stringify(config.template))
+    const options = {
+      cardkit: config.template,
+      title: `Editor / ${config.template.info.title}`,
+      layout: config.layout, // '16x9',
+    }
+    console.log({ options })
+    this.setState(options)
     /* eslint-disable */
     ga('send', {
       hitType: 'event',
       eventAction: 'template-set',
       eventCategory: 'CardKit templates',
-      eventLabel: template.info.title,
-      hitCallback: () => console.log('event sent', template.info.title),
+      eventLabel: config.template.info.title,
+      // hitCallback: () => console.log('event sent', config.template.info.title),
     })
     /* eslint-enable */
   }
@@ -82,12 +95,38 @@ class App extends Component {
     /* eslint-enable */
   }
 
+  filterLayouts (layout) {
+    // Filters the layouts shown in new granular grid
+    if (!layout) {
+      this.setState({
+        templates,
+        showLayout: layout,
+      })
+      return
+    }
+    const layoutSet = Object.keys(templates)
+      .filter(key => {
+        if (!layout) return true
+        return templates[key].layerItems[layout]
+      })
+      .reduce((output, key) => {
+        const update = output
+        update[key] = templates[key]
+        return update
+      }, {})
+    this.setState({
+      templates: layoutSet,
+      showLayout: layout,
+    })
+  }
+
   componentDidMount () {
     googleAnalytics.setup()
+    // console.log({ templates })
   }
 
   render () {
-    return (<>
+    return (<Frame>
       <Header>
         <HeaderWrapper>
           <h1>{ this.state.title }</h1>
@@ -96,13 +135,25 @@ class App extends Component {
           }
         </HeaderWrapper>
       </Header>
+
     {
       this.state.cardkit
-        ? <Cardkit template={ this.state.cardkit } />
-        : <Layout><TemplateGrid setCardkit={ this.setCardkit } /></Layout>
+        ? <Cardkit
+            template={ this.state.cardkit }
+            layout={ this.state.layout }
+          />
+        :
+        <Layout>
+            <TemplateGrid
+              setCardkit={ this.setCardkit }
+              templates={ this.state.templates }
+              showLayout={ this.state.showLayout }
+              filterLayouts={ this.filterLayouts }
+            />
+          </Layout>
     }
 
-    </>
+    </Frame>
     )
   }
 }
@@ -112,13 +163,17 @@ export default App
 
 
 
+const Frame = Styled.article`
+  background: #eee;
+`
+
 
 // window.config = config
 
 // window.layouts = config.layouts
 
 // function startCardKit () {
-//   console.log('stating...')
+  console.log('stating...')
 //   // Initialise CardKit
 //   var cardkit = new window.CardKit(window.config.configuration, {
 //     themes: window.config.themes,
@@ -134,7 +189,7 @@ export default App
 // }
 
 // function checkForCardkit () {
-//   console.log('checking...')
+  console.log('checking...')
 //   if (window.CardKit && window.CardKitDOM) {
 //     startCardKit()
 //   } else {

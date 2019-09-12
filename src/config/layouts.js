@@ -7,8 +7,8 @@ export default {
     },
     ratio: '16:9',
     usecases: [
-      'Major event',
-      'Defcon',
+      'Methode: Major event',
+      'Methode: Defcon',
       'Twitter',
     ],
   },
@@ -20,7 +20,7 @@ export default {
     },
     ratio: '4:3',
     usecases: [
-      'Story'
+      'Methode: Story',
     ],
   },
   '3x4': {
@@ -31,7 +31,7 @@ export default {
     },
     ratio: '3:4',
     usecases: [
-      'Story portrait'
+      'Methode: Story portrait'
     ],
   },
   square: {

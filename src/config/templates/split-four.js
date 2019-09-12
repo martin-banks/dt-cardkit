@@ -1,10 +1,24 @@
 import preview from './previews/split-four.jpg'
 
+import majorEvent from './previews/4-split/16x9.jpg'
+import story from './previews/4-split/4x3.jpg'
+import portrait from './previews/4-split/3x4.jpg'
+import square from './previews/4-split/square.jpg'
+import instaStories from './previews/4-split/Instagram stories.jpg'
+
+
 export default {
   layers: {},
   info: {
     title: 'Split Four',
     preview,
+    thumbs: {
+      '16x9': majorEvent,
+      '4x3': story,
+      '3x4': portrait,
+      'square': square,
+      'Instagram stories': instaStories,
+    },
   },
   layerItems: {
     '16x9': [
@@ -46,6 +60,13 @@ export default {
           y: '0%',
           width: '24.5%',
           height: '100%',
+        }
+      },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 920,
         }
       },
     ],
@@ -91,6 +112,13 @@ export default {
           height: '0%',
         }
       },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 1280,
+        }
+      },
     ],
     '3x4': [
       {
@@ -131,6 +159,13 @@ export default {
           y: '50.5%',
           width: '49.5%',
           height: '49.5%',
+        }
+      },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 1760,
         }
       },
     ],
@@ -175,6 +210,13 @@ export default {
           height: '49.5%',
         }
       },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 1760,
+        }
+      },
     ],
     'Instagram stories': [
       {
@@ -215,6 +257,13 @@ export default {
           y: '50.5%',
           width: '49.5%',
           height: '49.5%',
+        }
+      },
+      {
+        name: 'mastheads',
+        settings: {
+          label: 'mastheads',
+          y: 1760,
         }
       },
     ],

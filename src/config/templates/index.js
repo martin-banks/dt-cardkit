@@ -1,4 +1,4 @@
-import freestyle from './freestyle'
+// import freestyle from './freestyle'
 import displayQuote from './display-quote'
 import textOverlay from './text-overlay'
 
@@ -20,7 +20,7 @@ export default {
   InsetSingle,
   displayQuote,
   textOverlay,
-  freestyle,
+  // freestyle,
   breakingSport,
   breakingNews,
 }
