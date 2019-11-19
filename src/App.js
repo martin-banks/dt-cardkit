@@ -77,14 +77,14 @@ class App extends Component {
       title: `Editor / ${config.template.info.title}`,
       layout: config.layout, // '16x9',
     }
-    console.log({ options })
+    console.log(`${config.template.info.title} - ${config.layout}`, { options })
     this.setState(options)
     /* eslint-disable */
     ga('send', {
       hitType: 'event',
       eventAction: 'template-set',
       eventCategory: 'CardKit templates',
-      eventLabel: config.template.info.title,
+      eventLabel: `${config.template.info.title} - ${config.layout}`,
       // hitCallback: () => console.log('event sent', config.template.info.title),
     })
     /* eslint-enable */
@@ -121,7 +121,7 @@ class App extends Component {
   }
 
   componentDidMount () {
-    googleAnalytics.setup()
+    googleAnalytics.setup('UA-144546012-1')
     // console.log({ templates })
   }
 
