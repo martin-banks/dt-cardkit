@@ -1,6 +1,7 @@
 // import colors from '../colors'
 import st from '../images/logos/st-white-shadow'
 import dt from '../images/logos/dt-white-shadow'
+import supercoach from '../images/logos/supercoach'
 
 export default {
   type: 'image',
@@ -18,6 +19,7 @@ export default {
       'None': '',
       'Daily Telegraph': dt,
       'Sunday Telegraph': st,
+      'Supercoach': supercoach
     }
   },
 }

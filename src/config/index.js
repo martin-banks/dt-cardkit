@@ -28,6 +28,7 @@ import rectFixed from './layers/rect-fixed'
 
 import logoSportTelegraph from './logos/sport-telegraph'
 import logoNewsTelegraph from './logos/news-telegraph'
+
 import gradientLeft from './layers/gradient-left'
 import overlayGradient from './overlays/gradient'
 import overlayGradientFromRight from './overlays/gradient-from-right'
@@ -65,6 +66,7 @@ export default {
 
   logoSportTelegraph,
   logoNewsTelegraph,
+
   overlayGradient,
   overlayGradientFromRight,
   backgroundImageFixed,

@@ -39,6 +39,6 @@ async function init () {
   } catch (err) {
     console.log('\n--- ERROR ---\n', err, '\n-------------\n')
   }
-}  
+}
 
 init()
