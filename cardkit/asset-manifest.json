@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.efa35478.chunk.css",
+    "main.js": "/static/js/main.82f035c2.chunk.js",
+    "main.js.map": "/static/js/main.82f035c2.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.c99f9b0a.chunk.js": "/static/js/2.c99f9b0a.chunk.js",
+    "static/js/2.c99f9b0a.chunk.js.map": "/static/js/2.c99f9b0a.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7b4a631f53dbf18768ba118b59ac73c1.js": "/precache-manifest.7b4a631f53dbf18768ba118b59ac73c1.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.efa35478.chunk.css.map": "/static/css/main.efa35478.chunk.css.map",
+    "static/media/16x9.jpg": "/static/media/16x9.276309ef.jpg",
+    "static/media/3x4.jpg": "/static/media/3x4.9fd1a6e4.jpg",
+    "static/media/Instagram stories.jpg": "/static/media/Instagram stories.c9fbab04.jpg",
+    "static/media/breaking-news.jpg": "/static/media/breaking-news.47683e1d.jpg",
+    "static/media/breaking-sport.jpg": "/static/media/breaking-sport.bd5e167a.jpg",
+    "static/media/display-quote.jpg": "/static/media/display-quote.c1d2274b.jpg",
+    "static/media/inset-single.jpg": "/static/media/inset-single.66177343.jpg",
+    "static/media/placeholder.jpg": "/static/media/placeholder.ba7d2d4a.jpg",
+    "static/media/square.jpg": "/static/media/square.9d46fe89.jpg",
+    "static/media/text-overlay.jpg": "/static/media/text-overlay.cbc36072.jpg"
+  }
+}
