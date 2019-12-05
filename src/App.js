@@ -144,13 +144,13 @@ class App extends Component {
           />
         :
         <Layout>
-            <TemplateGrid
-              setCardkit={ this.setCardkit }
-              templates={ this.state.templates }
-              showLayout={ this.state.showLayout }
-              filterLayouts={ this.filterLayouts }
-            />
-          </Layout>
+          <TemplateGrid
+            setCardkit={ this.setCardkit }
+            templates={ this.state.templates }
+            showLayout={ this.state.showLayout }
+            filterLayouts={ this.filterLayouts }
+          />
+        </Layout>
     }
 
     </Frame>
